@@ -1,0 +1,34 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{e01a828e-6e67-4339-861f-fb58f2ee4da0}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="HTMLparsing.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="HTMLparsing">
+    <MSBuild Projects="HTMLparsing.dproj" Targets="" />
+  </Target>
+  <Target Name="HTMLparsing:Clean">
+    <MSBuild Projects="HTMLparsing.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="HTMLparsing:Make">
+    <MSBuild Projects="HTMLparsing.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="HTMLparsing" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="HTMLparsing:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="HTMLparsing:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>
